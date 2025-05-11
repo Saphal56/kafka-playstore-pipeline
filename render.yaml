@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: playstore-kafka-grafana
+    env: docker
+    buildCommand: "docker-compose build"
+    startCommand: "sleep infinity"
+    disk: 1024
+    envVars:
+      - key: KAFKA_BOOTSTRAP_SERVERS
+        value: kafka:9092
+      - key: PG_HOST
+        value: postgres
+      - key: PG_DATABASE
+        value: playstore_analytics
+      - key: PG_USER
+        value: admin
+      - key: PG_PASSWORD
+        value: adminpass
